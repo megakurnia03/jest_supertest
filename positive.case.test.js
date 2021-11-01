@@ -77,26 +77,12 @@ describe('#3 Check User Functionality', () => {
       expect(response.body).toEqual(bodyUser);
     });
 
-    test('3.3 Single User Not Found', async () =>{
-      const response = await getSingleUser(23);
-      expect(response.status).toEqual(404);
-    });
-
-    test('Get User per Page', async () =>{
+    test('3.3 Get User per Page', async () =>{
       const response = await getUserPerPage(2);
       expect(response.status).toEqual(200);
     })
 
-    test('Update User', async () =>{
-      const response = await UpdateUser(2)
-      .send({
-        name: 'mega',
-        job: 'QA Engineer',
-      })
-      expect(response.status).toEqual(200);
-    });
-
-    test('Create user', async () => {
+    test('3.4 Create user', async () => {
       const response = await createUser
         .send({
           name: 'mega',
@@ -106,12 +92,27 @@ describe('#3 Check User Functionality', () => {
       //expect(res.body).toHaveProperty('post')
     });
 
-    test('Delete User', async () =>{
+    test('3.5 Update User', async () =>{
+      const response = await UpdateUser(2)
+      .send({
+        name: 'mega',
+        job: 'QA Engineer',
+      })
+      expect(response.status).toEqual(200);
+    });
+
+
+    test('3.7 Delete User', async () =>{
       const response = await deleteUser(1);
       expect(response.status).toEqual(204);
     });
 
-    test( 'Get User', async () => {
+    test('Single User Not Found', async () =>{
+      const response = await getSingleUser(23);
+      expect(response.status).toEqual(404);
+    });
+
+    test( 'Get User Resource', async () => {
       const response = await getUserResource;
       expect(response.status).toEqual(200);
      
