@@ -44,7 +44,7 @@ describe('#1 check login functionality', () =>{
         password: "abc"
       })
     expect(response.status).toEqual(200)
-    //expect(res.body).toHaveProperty('post')
+    
   });
 
 });
@@ -58,7 +58,6 @@ describe('#2 check register functionality', () =>{
         password: "pistol"
       })
     expect(response.status).toEqual(200)
-    //expect(res.body).toHaveProperty('post')
   });
 
 });
@@ -89,7 +88,7 @@ describe('#3 Check User Functionality', () => {
           job: 'QA Engineer',
         })
       expect(response.status).toEqual(201)
-      //expect(res.body).toHaveProperty('post')
+      
     });
 
     test('3.5 Update User', async () =>{

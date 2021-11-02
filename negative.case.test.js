@@ -18,7 +18,7 @@ describe('#1 check login functionality', () =>{
 
 describe('#2 check register functionality', () =>{
 
-    test('1.2 Register User UnSuccesfully - fill register data with only email', async () => {
+    test('2.1 Register User UnSuccesfully - fill register data with only email', async () => {
       const response = await register
         .send({
           email: "eve.holt@reqres.in"
